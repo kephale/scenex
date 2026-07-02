@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="zensical-0.0.45">
+      <meta name="generator" content="zensical-0.0.46">
     
     
       
@@ -34,7 +34,7 @@
       
         
       
-      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.fba56155.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.19d3147f.min.css">
       
         
           
@@ -2261,7 +2261,7 @@ z-axis points out of the screen toward the viewer.</p>
 
 
 <a href="#scenex.model.Camera.look_at" class="headerlink" title="Permanent link">#</a></h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><span class="nf">look_at</span><span class="p">(</span><span class="n"><a class="autorefs autorefs-internal" title="&lt;b&gt;&lt;code&gt;target&lt;/code&gt;&lt;/b&gt;" href="./#scenex.model.Camera.look_at(target)">target</a></span><span class="p">:</span> <span class="n"><span title="scenex.model._nodes.camera.Position3D">Position3D</span></span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-internal" title="&lt;b&gt;&lt;code&gt;up&lt;/code&gt;&lt;/b&gt;" href="./#scenex.model.Camera.look_at(up)">up</a></span><span class="p">:</span> <span class="n"><span title="scenex.model._nodes.camera.Vector3D">Vector3D</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
+<div class="language-python doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><span class="nf">look_at</span><span class="p">(</span><span class="n"><a class="autorefs autorefs-internal" title="&lt;b&gt;&lt;code&gt;target&lt;/code&gt;&lt;/b&gt;" href="./#scenex.model.Camera.look_at(target)">target</a></span><span class="p">:</span> <span class="n"><span title="scenex.model._nodes.camera.Vec3Like">Vec3Like</span></span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-internal" title="&lt;b&gt;&lt;code&gt;up&lt;/code&gt;&lt;/b&gt;" href="./#scenex.model.Camera.look_at(up)">up</a></span><span class="p">:</span> <span class="n"><span title="scenex.model._nodes.camera.Vec3Like">Vec3Like</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span>
 </span></code></pre></div>
 
     <div class="doc doc-contents ">
@@ -2273,21 +2273,23 @@ z-axis points out of the screen toward the viewer.</p>
     <ul>
         <li class="doc-section-item field-body">
 <h4 id="scenex.model.Camera.look_at(target)" class="doc doc-heading doc-heading-parameter">              <b><code>target</code></b>
-<a href="#scenex.model.Camera.look_at(target)" class="headerlink" title="Permanent link">#</a></h4>              (<code><span title="scenex.model._nodes.camera.Position3D">Position3D</span></code>)
+<a href="#scenex.model.Camera.look_at(target)" class="headerlink" title="Permanent link">#</a></h4>              (<code><span title="scenex.model._nodes.camera.Vec3Like">Vec3Like</span></code>)
           –
           <div class="doc-md-description">
-            <p>The position in 3D space that the camera should look at.</p>
+            <p>3 element sequence defining the position in 3D space that the camera
+should look at.</p>
           </div>
         </li>
         <li class="doc-section-item field-body">
 <h4 id="scenex.model.Camera.look_at(up)" class="doc doc-heading doc-heading-parameter">              <b><code>up</code></b>
-<a href="#scenex.model.Camera.look_at(up)" class="headerlink" title="Permanent link">#</a></h4>              (<code><span title="scenex.model._nodes.camera.Vector3D">Vector3D</span> | None</code>, default:
+<a href="#scenex.model.Camera.look_at(up)" class="headerlink" title="Permanent link">#</a></h4>              (<code><span title="scenex.model._nodes.camera.Vec3Like">Vec3Like</span> | None</code>, default:
                   <code>None</code>
 )
           –
           <div class="doc-md-description">
-            <p>The up direction for the camera. If provided, this vector must be
-perpendicular to the forward vector that results from looking at target.</p>
+            <p>3 element sequence defining the up direction for the camera. If
+provided, this vector must be perpendicular to the forward vector that
+results from looking at target.</p>
           </div>
         </li>
     </ul>
@@ -2295,10 +2297,7 @@ perpendicular to the forward vector that results from looking at target.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/scenex/model/_nodes/camera.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">156</span>
-<span class="normal">157</span>
-<span class="normal">158</span>
-<span class="normal">159</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">159</span>
 <span class="normal">160</span>
 <span class="normal">161</span>
 <span class="normal">162</span>
@@ -2313,25 +2312,32 @@ perpendicular to the forward vector that results from looking at target.</p>
 <span class="normal">171</span>
 <span class="normal">172</span>
 <span class="normal">173</span>
-<span class="normal">174</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-156"><span class="k">def</span><span class="w"> </span><span class="nf">look_at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="n">Position3D</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">up</span><span class="p">:</span> <span class="n">Vector3D</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-157"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Adjusts the camera to look at a target point in the world.</span>
-</span><span id="__span-0-158">
-</span><span id="__span-0-159"><span class="sd">    Parameters</span>
-</span><span id="__span-0-160"><span class="sd">    ----------</span>
-</span><span id="__span-0-161"><span class="sd">    target: Position3D</span>
-</span><span id="__span-0-162"><span class="sd">        The position in 3D space that the camera should look at.</span>
-</span><span id="__span-0-163"><span class="sd">    up: Vector3D, optional</span>
-</span><span id="__span-0-164"><span class="sd">        The up direction for the camera. If provided, this vector must be</span>
-</span><span id="__span-0-165"><span class="sd">        perpendicular to the forward vector that results from looking at target.</span>
-</span><span id="__span-0-166"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-0-167">    <span class="n">position</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">map</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))[:</span><span class="mi">3</span><span class="p">]</span>
-</span><span id="__span-0-168">    <span class="bp">self</span><span class="o">.</span><span class="n">forward</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">target</span> <span class="o">-</span> <span class="n">position</span><span class="p">)</span>
-</span><span id="__span-0-169">    <span class="k">if</span> <span class="n">up</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-170">        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">up</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-0-171">            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Up vector must be non-zero.&quot;</span><span class="p">)</span>
-</span><span id="__span-0-172">        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">,</span> <span class="n">up</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mf">1e-6</span><span class="p">:</span>
-</span><span id="__span-0-173">            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Up vector must be perpendicular to forward vector.&quot;</span><span class="p">)</span>
-</span><span id="__span-0-174">        <span class="bp">self</span><span class="o">.</span><span class="n">up</span> <span class="o">=</span> <span class="n">up</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-159"><span class="k">def</span><span class="w"> </span><span class="nf">look_at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="n">Vec3Like</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">up</span><span class="p">:</span> <span class="n">Vec3Like</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-0-160"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Adjusts the camera to look at a target point in the world.</span>
+</span><span id="__span-0-161">
+</span><span id="__span-0-162"><span class="sd">    Parameters</span>
+</span><span id="__span-0-163"><span class="sd">    ----------</span>
+</span><span id="__span-0-164"><span class="sd">    target: array-like</span>
+</span><span id="__span-0-165"><span class="sd">        3 element sequence defining the position in 3D space that the camera</span>
+</span><span id="__span-0-166"><span class="sd">        should look at.</span>
+</span><span id="__span-0-167"><span class="sd">    up: array-like, optional</span>
+</span><span id="__span-0-168"><span class="sd">        3 element sequence defining the up direction for the camera. If</span>
+</span><span id="__span-0-169"><span class="sd">        provided, this vector must be perpendicular to the forward vector that</span>
+</span><span id="__span-0-170"><span class="sd">        results from looking at target.</span>
+</span><span id="__span-0-171"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-172">    <span class="n">position</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">map</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))[:</span><span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-0-173">    <span class="bp">self</span><span class="o">.</span><span class="n">forward</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">target</span> <span class="o">-</span> <span class="n">position</span><span class="p">)</span>
+</span><span id="__span-0-174">    <span class="k">if</span> <span class="n">up</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-0-175">        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">up</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-0-176">            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Up vector must be non-zero.&quot;</span><span class="p">)</span>
+</span><span id="__span-0-177">        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">,</span> <span class="n">up</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mf">1e-6</span><span class="p">:</span>
+</span><span id="__span-0-178">            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Up vector must be perpendicular to forward vector.&quot;</span><span class="p">)</span>
+</span><span id="__span-0-179">        <span class="bp">self</span><span class="o">.</span><span class="n">up</span> <span class="o">=</span> <span class="n">up</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -2964,12 +2970,7 @@ space, which requires both the camera matrices and the viewport dimensions.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/scenex/model/_nodes/camera.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">216</span>
-<span class="normal">217</span>
-<span class="normal">218</span>
-<span class="normal">219</span>
-<span class="normal">220</span>
-<span class="normal">221</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">221</span>
 <span class="normal">222</span>
 <span class="normal">223</span>
 <span class="normal">224</span>
@@ -2992,35 +2993,40 @@ space, which requires both the camera matrices and the viewport dimensions.</p>
 <span class="normal">241</span>
 <span class="normal">242</span>
 <span class="normal">243</span>
-<span class="normal">244</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-216"><span class="nd">@abstractmethod</span>
-</span><span id="__span-0-217"><span class="k">def</span><span class="w"> </span><span class="nf">handle_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">Event</span><span class="p">,</span> <span class="n">view</span><span class="p">:</span> <span class="n">View</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="__span-0-218"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="__span-0-219"><span class="sd">    Handle a user interaction event to control the camera.</span>
-</span><span id="__span-0-220">
-</span><span id="__span-0-221"><span class="sd">    This method is called automatically on all events on the camera&#39;s view that were</span>
-</span><span id="__span-0-222"><span class="sd">    not handled by previous handlers during scenex event processing.</span>
-</span><span id="__span-0-223">
-</span><span id="__span-0-224"><span class="sd">    Parameters</span>
-</span><span id="__span-0-225"><span class="sd">    ----------</span>
-</span><span id="__span-0-226"><span class="sd">    event : Event</span>
-</span><span id="__span-0-227"><span class="sd">        The input event to handle (MouseMoveEvent, MousePressEvent, WheelEvent,</span>
-</span><span id="__span-0-228"><span class="sd">        KeyPressEvent, etc.)</span>
-</span><span id="__span-0-229"><span class="sd">    view : View</span>
-</span><span id="__span-0-230"><span class="sd">        The view containing the camera to manipulate.</span>
-</span><span id="__span-0-231">
-</span><span id="__span-0-232"><span class="sd">    Returns</span>
-</span><span id="__span-0-233"><span class="sd">    -------</span>
-</span><span id="__span-0-234"><span class="sd">    bool</span>
-</span><span id="__span-0-235"><span class="sd">        True if the event was fully handled and should not propagate to other</span>
-</span><span id="__span-0-236"><span class="sd">        handlers, False if not handled or other handlers should process it.</span>
-</span><span id="__span-0-237">
-</span><span id="__span-0-238"><span class="sd">    Notes</span>
-</span><span id="__span-0-239"><span class="sd">    -----</span>
-</span><span id="__span-0-240"><span class="sd">    A ``View`` is passed rather than a ``Camera`` directly because controllers</span>
-</span><span id="__span-0-241"><span class="sd">    need ``view.to_ray()`` to unproject screen-space event positions into world</span>
-</span><span id="__span-0-242"><span class="sd">    space, which requires both the camera matrices and the viewport dimensions.</span>
-</span><span id="__span-0-243"><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-0-244">    <span class="o">...</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-221"><span class="nd">@abstractmethod</span>
+</span><span id="__span-0-222"><span class="k">def</span><span class="w"> </span><span class="nf">handle_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">Event</span><span class="p">,</span> <span class="n">view</span><span class="p">:</span> <span class="n">View</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__span-0-223"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-0-224"><span class="sd">    Handle a user interaction event to control the camera.</span>
+</span><span id="__span-0-225">
+</span><span id="__span-0-226"><span class="sd">    This method is called automatically on all events on the camera&#39;s view that were</span>
+</span><span id="__span-0-227"><span class="sd">    not handled by previous handlers during scenex event processing.</span>
+</span><span id="__span-0-228">
+</span><span id="__span-0-229"><span class="sd">    Parameters</span>
+</span><span id="__span-0-230"><span class="sd">    ----------</span>
+</span><span id="__span-0-231"><span class="sd">    event : Event</span>
+</span><span id="__span-0-232"><span class="sd">        The input event to handle (MouseMoveEvent, MousePressEvent, WheelEvent,</span>
+</span><span id="__span-0-233"><span class="sd">        KeyPressEvent, etc.)</span>
+</span><span id="__span-0-234"><span class="sd">    view : View</span>
+</span><span id="__span-0-235"><span class="sd">        The view containing the camera to manipulate.</span>
+</span><span id="__span-0-236">
+</span><span id="__span-0-237"><span class="sd">    Returns</span>
+</span><span id="__span-0-238"><span class="sd">    -------</span>
+</span><span id="__span-0-239"><span class="sd">    bool</span>
+</span><span id="__span-0-240"><span class="sd">        True if the event was fully handled and should not propagate to other</span>
+</span><span id="__span-0-241"><span class="sd">        handlers, False if not handled or other handlers should process it.</span>
+</span><span id="__span-0-242">
+</span><span id="__span-0-243"><span class="sd">    Notes</span>
+</span><span id="__span-0-244"><span class="sd">    -----</span>
+</span><span id="__span-0-245"><span class="sd">    A ``View`` is passed rather than a ``Camera`` directly because controllers</span>
+</span><span id="__span-0-246"><span class="sd">    need ``view.to_ray()`` to unproject screen-space event positions into world</span>
+</span><span id="__span-0-247"><span class="sd">    space, which requires both the camera matrices and the viewport dimensions.</span>
+</span><span id="__span-0-248"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-249">    <span class="o">...</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -8284,12 +8290,7 @@ Camera.look_at : Method to orient camera toward a point</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/scenex/model/_nodes/camera.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">495</span>
-<span class="normal">496</span>
-<span class="normal">497</span>
-<span class="normal">498</span>
-<span class="normal">499</span>
-<span class="normal">500</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">500</span>
 <span class="normal">501</span>
 <span class="normal">502</span>
 <span class="normal">503</span>
@@ -8387,110 +8388,115 @@ Camera.look_at : Method to orient camera toward a point</p>
 <span class="normal">595</span>
 <span class="normal">596</span>
 <span class="normal">597</span>
-<span class="normal">598</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-495"><span class="k">def</span><span class="w"> </span><span class="nf">handle_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">Event</span><span class="p">,</span> <span class="n">view</span><span class="p">:</span> <span class="n">View</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="__span-0-496"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Handle mouse and wheel events to orbit the camera.&quot;&quot;&quot;</span>
-</span><span id="__span-0-497">    <span class="k">if</span> <span class="ow">not</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">interactive</span><span class="p">:</span>
-</span><span id="__span-0-498">        <span class="k">return</span> <span class="kc">False</span>
-</span><span id="__span-0-499">
-</span><span id="__span-0-500">    <span class="n">handled</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="__span-0-501">    <span class="n">center_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>
-</span><span id="__span-0-502">
-</span><span id="__span-0-503">    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MouseEvent</span><span class="p">):</span>
-</span><span id="__span-0-504">        <span class="k">return</span> <span class="kc">False</span>
-</span><span id="__span-0-505">    <span class="k">if</span> <span class="p">(</span><span class="n">ray</span> <span class="o">:=</span> <span class="n">view</span><span class="o">.</span><span class="n">to_ray</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">))</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-506">        <span class="k">return</span> <span class="kc">False</span>
-</span><span id="__span-0-507">    <span class="c1"># Orbit on mouse move with left button held</span>
-</span><span id="__span-0-508">    <span class="k">if</span> <span class="p">(</span>
-</span><span id="__span-0-509">        <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MouseMoveEvent</span><span class="p">)</span>
-</span><span id="__span-0-510">        <span class="ow">and</span> <span class="n">event</span><span class="o">.</span><span class="n">buttons</span> <span class="o">==</span> <span class="n">MouseButton</span><span class="o">.</span><span class="n">LEFT</span>
-</span><span id="__span-0-511">        <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_canvas_pos</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-</span><span id="__span-0-512">    <span class="p">):</span>
-</span><span id="__span-0-513">        <span class="c1"># The process of orbiting is as follows:</span>
-</span><span id="__span-0-514">        <span class="c1"># 1. Compute the azimuth and elevation changes based on mouse movement.</span>
-</span><span id="__span-0-515">        <span class="c1">#   - Azimuth describes the angle between the the positive X axis and</span>
-</span><span id="__span-0-516">        <span class="c1">#       the projection of the camera&#39;s position onto the XY plane.</span>
-</span><span id="__span-0-517">        <span class="c1">#   - Elevation describes the angle between the camera&#39;s position and</span>
-</span><span id="__span-0-518">        <span class="c1">#       the positive Z axis.</span>
-</span><span id="__span-0-519">        <span class="c1"># 2. Ensure these changes are clamped to valid ranges (only really</span>
-</span><span id="__span-0-520">        <span class="c1">#   applies to elevation).</span>
-</span><span id="__span-0-521">        <span class="c1"># 3. Adjust the current transform by:</span>
-</span><span id="__span-0-522">        <span class="c1">#   a. Translating by the negative of the centerpoint, to take it out of</span>
-</span><span id="__span-0-523">        <span class="c1">#       the computation.</span>
-</span><span id="__span-0-524">        <span class="c1">#   b. Rotating to adjust the elevation. The axis of rotation is defined</span>
-</span><span id="__span-0-525">        <span class="c1">#       by the camera&#39;s right vector. Note that this is done before the</span>
-</span><span id="__span-0-526">        <span class="c1">#       azimuth adjustment because that adjustment will alter the</span>
-</span><span id="__span-0-527">        <span class="c1">#       camera&#39;s right vector.</span>
-</span><span id="__span-0-528">        <span class="c1">#   c. Rotating to adjust the azimuth. The axis of rotation is always</span>
-</span><span id="__span-0-529">        <span class="c1">#       the positive Z axis.</span>
-</span><span id="__span-0-530">        <span class="c1">#   d. Translating by the centerpoint, to reorient the camera around</span>
-</span><span id="__span-0-531">        <span class="c1">#           that centerpoint.</span>
-</span><span id="__span-0-532">
-</span><span id="__span-0-533">        <span class="c1"># Step 0: Gather transform components, relative to camera center</span>
-</span><span id="__span-0-534">        <span class="n">orbit_mat</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="o">-</span><span class="n">center_array</span><span class="p">)</span>
-</span><span id="__span-0-535">        <span class="n">position</span><span class="p">,</span> <span class="n">_rotation</span><span class="p">,</span> <span class="n">_scale</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">mat_decompose</span><span class="p">(</span><span class="n">orbit_mat</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-</span><span id="__span-0-536">        <span class="n">camera_right</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">forward</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">up</span><span class="p">)</span>
+<span class="normal">598</span>
+<span class="normal">599</span>
+<span class="normal">600</span>
+<span class="normal">601</span>
+<span class="normal">602</span>
+<span class="normal">603</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-500"><span class="k">def</span><span class="w"> </span><span class="nf">handle_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">Event</span><span class="p">,</span> <span class="n">view</span><span class="p">:</span> <span class="n">View</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__span-0-501"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Handle mouse and wheel events to orbit the camera.&quot;&quot;&quot;</span>
+</span><span id="__span-0-502">    <span class="k">if</span> <span class="ow">not</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">interactive</span><span class="p">:</span>
+</span><span id="__span-0-503">        <span class="k">return</span> <span class="kc">False</span>
+</span><span id="__span-0-504">
+</span><span id="__span-0-505">    <span class="n">handled</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-0-506">    <span class="n">center_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>
+</span><span id="__span-0-507">
+</span><span id="__span-0-508">    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MouseEvent</span><span class="p">):</span>
+</span><span id="__span-0-509">        <span class="k">return</span> <span class="kc">False</span>
+</span><span id="__span-0-510">    <span class="k">if</span> <span class="p">(</span><span class="n">ray</span> <span class="o">:=</span> <span class="n">view</span><span class="o">.</span><span class="n">to_ray</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">))</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-0-511">        <span class="k">return</span> <span class="kc">False</span>
+</span><span id="__span-0-512">    <span class="c1"># Orbit on mouse move with left button held</span>
+</span><span id="__span-0-513">    <span class="k">if</span> <span class="p">(</span>
+</span><span id="__span-0-514">        <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MouseMoveEvent</span><span class="p">)</span>
+</span><span id="__span-0-515">        <span class="ow">and</span> <span class="n">event</span><span class="o">.</span><span class="n">buttons</span> <span class="o">==</span> <span class="n">MouseButton</span><span class="o">.</span><span class="n">LEFT</span>
+</span><span id="__span-0-516">        <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_canvas_pos</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="__span-0-517">    <span class="p">):</span>
+</span><span id="__span-0-518">        <span class="c1"># The process of orbiting is as follows:</span>
+</span><span id="__span-0-519">        <span class="c1"># 1. Compute the azimuth and elevation changes based on mouse movement.</span>
+</span><span id="__span-0-520">        <span class="c1">#   - Azimuth describes the angle between the the positive X axis and</span>
+</span><span id="__span-0-521">        <span class="c1">#       the projection of the camera&#39;s position onto the XY plane.</span>
+</span><span id="__span-0-522">        <span class="c1">#   - Elevation describes the angle between the camera&#39;s position and</span>
+</span><span id="__span-0-523">        <span class="c1">#       the positive Z axis.</span>
+</span><span id="__span-0-524">        <span class="c1"># 2. Ensure these changes are clamped to valid ranges (only really</span>
+</span><span id="__span-0-525">        <span class="c1">#   applies to elevation).</span>
+</span><span id="__span-0-526">        <span class="c1"># 3. Adjust the current transform by:</span>
+</span><span id="__span-0-527">        <span class="c1">#   a. Translating by the negative of the centerpoint, to take it out of</span>
+</span><span id="__span-0-528">        <span class="c1">#       the computation.</span>
+</span><span id="__span-0-529">        <span class="c1">#   b. Rotating to adjust the elevation. The axis of rotation is defined</span>
+</span><span id="__span-0-530">        <span class="c1">#       by the camera&#39;s right vector. Note that this is done before the</span>
+</span><span id="__span-0-531">        <span class="c1">#       azimuth adjustment because that adjustment will alter the</span>
+</span><span id="__span-0-532">        <span class="c1">#       camera&#39;s right vector.</span>
+</span><span id="__span-0-533">        <span class="c1">#   c. Rotating to adjust the azimuth. The axis of rotation is always</span>
+</span><span id="__span-0-534">        <span class="c1">#       the positive Z axis.</span>
+</span><span id="__span-0-535">        <span class="c1">#   d. Translating by the centerpoint, to reorient the camera around</span>
+</span><span id="__span-0-536">        <span class="c1">#           that centerpoint.</span>
 </span><span id="__span-0-537">
-</span><span id="__span-0-538">        <span class="c1"># Step 1</span>
-</span><span id="__span-0-539">        <span class="n">d_azimuth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_canvas_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="__span-0-540">        <span class="n">d_elevation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_canvas_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</span><span id="__span-0-541">
-</span><span id="__span-0-542">        <span class="c1"># Step 2</span>
-</span><span id="__span-0-543">        <span class="n">e_bound</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">la</span><span class="o">.</span><span class="n">vec_angle</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-</span><span id="__span-0-544">        <span class="k">if</span> <span class="n">e_bound</span> <span class="o">+</span> <span class="n">d_elevation</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-0-545">            <span class="n">d_elevation</span> <span class="o">=</span> <span class="o">-</span><span class="n">e_bound</span>
-</span><span id="__span-0-546">        <span class="k">if</span> <span class="n">e_bound</span> <span class="o">+</span> <span class="n">d_elevation</span> <span class="o">&gt;</span> <span class="mi">180</span><span class="p">:</span>
-</span><span id="__span-0-547">            <span class="n">d_elevation</span> <span class="o">=</span> <span class="mi">180</span> <span class="o">-</span> <span class="n">e_bound</span>
-</span><span id="__span-0-548">
-</span><span id="__span-0-549">        <span class="c1"># Step 3</span>
-</span><span id="__span-0-550">        <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="__span-0-551">            <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="o">-</span><span class="n">center_array</span><span class="p">)</span>  <span class="c1"># 3a</span>
-</span><span id="__span-0-552">            <span class="o">.</span><span class="n">rotated</span><span class="p">(</span><span class="n">d_elevation</span><span class="p">,</span> <span class="n">camera_right</span><span class="p">)</span>  <span class="c1"># 3b</span>
-</span><span id="__span-0-553">            <span class="o">.</span><span class="n">rotated</span><span class="p">(</span><span class="n">d_azimuth</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">polar_axis</span><span class="p">)</span>  <span class="c1"># 3c</span>
-</span><span id="__span-0-554">            <span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="n">center_array</span><span class="p">)</span>  <span class="c1"># 3d</span>
-</span><span id="__span-0-555">        <span class="p">)</span>
-</span><span id="__span-0-556">
-</span><span id="__span-0-557">        <span class="n">handled</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="__span-0-558">
-</span><span id="__span-0-559">    <span class="c1"># Pan on mouse press with right button</span>
-</span><span id="__span-0-560">    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MousePressEvent</span><span class="p">)</span> <span class="ow">and</span> <span class="n">event</span><span class="o">.</span><span class="n">buttons</span> <span class="o">==</span> <span class="n">MouseButton</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
-</span><span id="__span-0-561">        <span class="bp">self</span><span class="o">.</span><span class="n">_pan_ray</span> <span class="o">=</span> <span class="n">ray</span>
-</span><span id="__span-0-562">
-</span><span id="__span-0-563">    <span class="c1"># Pan on mouse move with right button held</span>
-</span><span id="__span-0-564">    <span class="k">elif</span> <span class="p">(</span>
-</span><span id="__span-0-565">        <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MouseMoveEvent</span><span class="p">)</span>
-</span><span id="__span-0-566">        <span class="ow">and</span> <span class="n">event</span><span class="o">.</span><span class="n">buttons</span> <span class="o">==</span> <span class="n">MouseButton</span><span class="o">.</span><span class="n">RIGHT</span>
-</span><span id="__span-0-567">        <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pan_ray</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-</span><span id="__span-0-568">    <span class="p">):</span>
-</span><span id="__span-0-569">        <span class="n">dr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">map</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="n">center_array</span><span class="p">)</span>
-</span><span id="__span-0-570">        <span class="n">old_center</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pan_ray</span><span class="o">.</span><span class="n">origin</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span>
-</span><span id="__span-0-571">            <span class="n">dr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pan_ray</span><span class="o">.</span><span class="n">direction</span>
-</span><span id="__span-0-572">        <span class="p">)</span>
-</span><span id="__span-0-573">        <span class="n">new_center</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">origin</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">dr</span><span class="p">,</span> <span class="n">ray</span><span class="o">.</span><span class="n">direction</span><span class="p">)</span>
-</span><span id="__span-0-574">        <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">old_center</span><span class="p">,</span> <span class="n">new_center</span><span class="p">)</span>
-</span><span id="__span-0-575">        <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
-</span><span id="__span-0-576">        <span class="c1"># Update the center</span>
-</span><span id="__span-0-577">        <span class="n">new_center_array</span> <span class="o">=</span> <span class="n">center_array</span> <span class="o">+</span> <span class="n">diff</span>
-</span><span id="__span-0-578">        <span class="n">new_center_tuple</span> <span class="o">=</span> <span class="p">(</span>
-</span><span id="__span-0-579">            <span class="nb">float</span><span class="p">(</span><span class="n">new_center_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
-</span><span id="__span-0-580">            <span class="nb">float</span><span class="p">(</span><span class="n">new_center_array</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
-</span><span id="__span-0-581">            <span class="nb">float</span><span class="p">(</span><span class="n">new_center_array</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span>
-</span><span id="__span-0-582">        <span class="p">)</span>
-</span><span id="__span-0-583">        <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">new_center_tuple</span>
-</span><span id="__span-0-584">        <span class="n">handled</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="__span-0-585">
-</span><span id="__span-0-586">    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">WheelEvent</span><span class="p">):</span>
-</span><span id="__span-0-587">        <span class="n">_dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">angle_delta</span>
-</span><span id="__span-0-588">        <span class="k">if</span> <span class="n">dy</span><span class="p">:</span>
-</span><span id="__span-0-589">            <span class="n">dr</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">map</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="n">center_array</span>
-</span><span id="__span-0-590">            <span class="n">zoom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_zoom_factor</span><span class="p">(</span><span class="n">dy</span><span class="p">)</span>
-</span><span id="__span-0-591">            <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span>
-</span><span id="__span-0-592">                <span class="n">dr</span> <span class="o">*</span> <span class="p">(</span><span class="n">zoom</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-0-593">            <span class="p">)</span>
-</span><span id="__span-0-594">        <span class="n">handled</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="__span-0-595">
-</span><span id="__span-0-596">    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MouseEvent</span><span class="p">):</span>
-</span><span id="__span-0-597">        <span class="bp">self</span><span class="o">.</span><span class="n">_last_canvas_pos</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">pos</span>
-</span><span id="__span-0-598">    <span class="k">return</span> <span class="n">handled</span>
+</span><span id="__span-0-538">        <span class="c1"># Step 0: Gather transform components, relative to camera center</span>
+</span><span id="__span-0-539">        <span class="n">orbit_mat</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="o">-</span><span class="n">center_array</span><span class="p">)</span>
+</span><span id="__span-0-540">        <span class="n">position</span><span class="p">,</span> <span class="n">_rotation</span><span class="p">,</span> <span class="n">_scale</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">mat_decompose</span><span class="p">(</span><span class="n">orbit_mat</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</span><span id="__span-0-541">        <span class="n">camera_right</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">forward</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">up</span><span class="p">)</span>
+</span><span id="__span-0-542">
+</span><span id="__span-0-543">        <span class="c1"># Step 1</span>
+</span><span id="__span-0-544">        <span class="n">d_azimuth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_canvas_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-0-545">        <span class="n">d_elevation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_canvas_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-0-546">
+</span><span id="__span-0-547">        <span class="c1"># Step 2</span>
+</span><span id="__span-0-548">        <span class="n">e_bound</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">la</span><span class="o">.</span><span class="n">vec_angle</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</span><span id="__span-0-549">        <span class="k">if</span> <span class="n">e_bound</span> <span class="o">+</span> <span class="n">d_elevation</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-0-550">            <span class="n">d_elevation</span> <span class="o">=</span> <span class="o">-</span><span class="n">e_bound</span>
+</span><span id="__span-0-551">        <span class="k">if</span> <span class="n">e_bound</span> <span class="o">+</span> <span class="n">d_elevation</span> <span class="o">&gt;</span> <span class="mi">180</span><span class="p">:</span>
+</span><span id="__span-0-552">            <span class="n">d_elevation</span> <span class="o">=</span> <span class="mi">180</span> <span class="o">-</span> <span class="n">e_bound</span>
+</span><span id="__span-0-553">
+</span><span id="__span-0-554">        <span class="c1"># Step 3</span>
+</span><span id="__span-0-555">        <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="__span-0-556">            <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="o">-</span><span class="n">center_array</span><span class="p">)</span>  <span class="c1"># 3a</span>
+</span><span id="__span-0-557">            <span class="o">.</span><span class="n">rotated</span><span class="p">(</span><span class="n">d_elevation</span><span class="p">,</span> <span class="n">camera_right</span><span class="p">)</span>  <span class="c1"># 3b</span>
+</span><span id="__span-0-558">            <span class="o">.</span><span class="n">rotated</span><span class="p">(</span><span class="n">d_azimuth</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">polar_axis</span><span class="p">)</span>  <span class="c1"># 3c</span>
+</span><span id="__span-0-559">            <span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="n">center_array</span><span class="p">)</span>  <span class="c1"># 3d</span>
+</span><span id="__span-0-560">        <span class="p">)</span>
+</span><span id="__span-0-561">
+</span><span id="__span-0-562">        <span class="n">handled</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-0-563">
+</span><span id="__span-0-564">    <span class="c1"># Pan on mouse press with right button</span>
+</span><span id="__span-0-565">    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MousePressEvent</span><span class="p">)</span> <span class="ow">and</span> <span class="n">event</span><span class="o">.</span><span class="n">buttons</span> <span class="o">==</span> <span class="n">MouseButton</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
+</span><span id="__span-0-566">        <span class="bp">self</span><span class="o">.</span><span class="n">_pan_ray</span> <span class="o">=</span> <span class="n">ray</span>
+</span><span id="__span-0-567">
+</span><span id="__span-0-568">    <span class="c1"># Pan on mouse move with right button held</span>
+</span><span id="__span-0-569">    <span class="k">elif</span> <span class="p">(</span>
+</span><span id="__span-0-570">        <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MouseMoveEvent</span><span class="p">)</span>
+</span><span id="__span-0-571">        <span class="ow">and</span> <span class="n">event</span><span class="o">.</span><span class="n">buttons</span> <span class="o">==</span> <span class="n">MouseButton</span><span class="o">.</span><span class="n">RIGHT</span>
+</span><span id="__span-0-572">        <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pan_ray</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="__span-0-573">    <span class="p">):</span>
+</span><span id="__span-0-574">        <span class="n">dr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">map</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="n">center_array</span><span class="p">)</span>
+</span><span id="__span-0-575">        <span class="n">old_center</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pan_ray</span><span class="o">.</span><span class="n">origin</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span>
+</span><span id="__span-0-576">            <span class="n">dr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pan_ray</span><span class="o">.</span><span class="n">direction</span>
+</span><span id="__span-0-577">        <span class="p">)</span>
+</span><span id="__span-0-578">        <span class="n">new_center</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">origin</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">dr</span><span class="p">,</span> <span class="n">ray</span><span class="o">.</span><span class="n">direction</span><span class="p">)</span>
+</span><span id="__span-0-579">        <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">old_center</span><span class="p">,</span> <span class="n">new_center</span><span class="p">)</span>
+</span><span id="__span-0-580">        <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+</span><span id="__span-0-581">        <span class="c1"># Update the center</span>
+</span><span id="__span-0-582">        <span class="n">new_center_array</span> <span class="o">=</span> <span class="n">center_array</span> <span class="o">+</span> <span class="n">diff</span>
+</span><span id="__span-0-583">        <span class="n">new_center_tuple</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="__span-0-584">            <span class="nb">float</span><span class="p">(</span><span class="n">new_center_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+</span><span id="__span-0-585">            <span class="nb">float</span><span class="p">(</span><span class="n">new_center_array</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+</span><span id="__span-0-586">            <span class="nb">float</span><span class="p">(</span><span class="n">new_center_array</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span>
+</span><span id="__span-0-587">        <span class="p">)</span>
+</span><span id="__span-0-588">        <span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">new_center_tuple</span>
+</span><span id="__span-0-589">        <span class="n">handled</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-0-590">
+</span><span id="__span-0-591">    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">WheelEvent</span><span class="p">):</span>
+</span><span id="__span-0-592">        <span class="n">_dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">angle_delta</span>
+</span><span id="__span-0-593">        <span class="k">if</span> <span class="n">dy</span><span class="p">:</span>
+</span><span id="__span-0-594">            <span class="n">dr</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">map</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="n">center_array</span>
+</span><span id="__span-0-595">            <span class="n">zoom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_zoom_factor</span><span class="p">(</span><span class="n">dy</span><span class="p">)</span>
+</span><span id="__span-0-596">            <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span>
+</span><span id="__span-0-597">                <span class="n">dr</span> <span class="o">*</span> <span class="p">(</span><span class="n">zoom</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-598">            <span class="p">)</span>
+</span><span id="__span-0-599">        <span class="n">handled</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-0-600">
+</span><span id="__span-0-601">    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MouseEvent</span><span class="p">):</span>
+</span><span id="__span-0-602">        <span class="bp">self</span><span class="o">.</span><span class="n">_last_canvas_pos</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">pos</span>
+</span><span id="__span-0-603">    <span class="k">return</span> <span class="n">handled</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -8674,12 +8680,7 @@ Camera : Camera class with controller field</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/scenex/model/_nodes/camera.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">316</span>
-<span class="normal">317</span>
-<span class="normal">318</span>
-<span class="normal">319</span>
-<span class="normal">320</span>
-<span class="normal">321</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">321</span>
 <span class="normal">322</span>
 <span class="normal">323</span>
 <span class="normal">324</span>
@@ -8739,72 +8740,77 @@ Camera : Camera class with controller field</p>
 <span class="normal">378</span>
 <span class="normal">379</span>
 <span class="normal">380</span>
-<span class="normal">381</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-316"><span class="k">def</span><span class="w"> </span><span class="nf">handle_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">Event</span><span class="p">,</span> <span class="n">view</span><span class="p">:</span> <span class="n">View</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="__span-0-317"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Handle mouse and wheel events to pan/zoom the camera.&quot;&quot;&quot;</span>
-</span><span id="__span-0-318">    <span class="k">if</span> <span class="ow">not</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">interactive</span><span class="p">:</span>
-</span><span id="__span-0-319">        <span class="k">return</span> <span class="kc">False</span>
-</span><span id="__span-0-320">
-</span><span id="__span-0-321">    <span class="n">handled</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="__span-0-322">
-</span><span id="__span-0-323">    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MouseEvent</span><span class="p">):</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-321"><span class="k">def</span><span class="w"> </span><span class="nf">handle_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">Event</span><span class="p">,</span> <span class="n">view</span><span class="p">:</span> <span class="n">View</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__span-0-322"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Handle mouse and wheel events to pan/zoom the camera.&quot;&quot;&quot;</span>
+</span><span id="__span-0-323">    <span class="k">if</span> <span class="ow">not</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">interactive</span><span class="p">:</span>
 </span><span id="__span-0-324">        <span class="k">return</span> <span class="kc">False</span>
-</span><span id="__span-0-325">    <span class="k">if</span> <span class="p">(</span><span class="n">ray</span> <span class="o">:=</span> <span class="n">view</span><span class="o">.</span><span class="n">to_ray</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">))</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-326">        <span class="k">return</span> <span class="kc">False</span>
-</span><span id="__span-0-327">    <span class="c1"># Panning involves keeping a particular position underneath the cursor.</span>
-</span><span id="__span-0-328">    <span class="c1"># That position is recorded on a left mouse button press.</span>
-</span><span id="__span-0-329">    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MousePressEvent</span><span class="p">)</span> <span class="ow">and</span> <span class="n">MouseButton</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">buttons</span><span class="p">:</span>
-</span><span id="__span-0-330">        <span class="bp">self</span><span class="o">.</span><span class="n">_drag_pos</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">origin</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
-</span><span id="__span-0-331">    <span class="c1"># Every time the cursor is moved, until the left mouse button is released,</span>
-</span><span id="__span-0-332">    <span class="c1"># We translate the camera such that the position is back under the cursor</span>
-</span><span id="__span-0-333">    <span class="c1"># (i.e. under the world ray origin)</span>
-</span><span id="__span-0-334">    <span class="k">elif</span> <span class="p">(</span>
-</span><span id="__span-0-335">        <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MouseMoveEvent</span><span class="p">)</span>
-</span><span id="__span-0-336">        <span class="ow">and</span> <span class="n">MouseButton</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">buttons</span>
-</span><span id="__span-0-337">        <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_drag_pos</span>
-</span><span id="__span-0-338">    <span class="p">):</span>
-</span><span id="__span-0-339">        <span class="n">new_pos</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">origin</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
-</span><span id="__span-0-340">        <span class="n">dx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_drag_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">new_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="__span-0-341">        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock_x</span><span class="p">:</span>
-</span><span id="__span-0-342">            <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">translated</span><span class="p">((</span><span class="n">dx</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-</span><span id="__span-0-343">        <span class="n">dy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_drag_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">new_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</span><span id="__span-0-344">        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock_y</span><span class="p">:</span>
-</span><span id="__span-0-345">            <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">translated</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">dy</span><span class="p">))</span>
-</span><span id="__span-0-346">        <span class="n">handled</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="__span-0-347">
-</span><span id="__span-0-348">    <span class="c1"># Note that while panning adjusts the camera&#39;s transform matrix, zooming</span>
-</span><span id="__span-0-349">    <span class="c1"># adjusts the projection matrix.</span>
-</span><span id="__span-0-350">    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">WheelEvent</span><span class="p">):</span>
-</span><span id="__span-0-351">        <span class="c1"># Zoom while keeping the position under the cursor fixed.</span>
-</span><span id="__span-0-352">        <span class="n">_dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">angle_delta</span>
-</span><span id="__span-0-353">        <span class="k">if</span> <span class="n">dy</span><span class="p">:</span>
-</span><span id="__span-0-354">            <span class="c1"># Step 1: Adjust the projection matrix to zoom in or out.</span>
-</span><span id="__span-0-355">            <span class="n">zoom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_zoom_factor</span><span class="p">(</span><span class="n">dy</span><span class="p">)</span>
-</span><span id="__span-0-356">            <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">projection</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">projection</span><span class="o">.</span><span class="n">scaled</span><span class="p">(</span>
-</span><span id="__span-0-357">                <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock_x</span> <span class="k">else</span> <span class="n">zoom</span><span class="p">,</span> <span class="mi">1</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock_y</span> <span class="k">else</span> <span class="n">zoom</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
-</span><span id="__span-0-358">            <span class="p">)</span>
-</span><span id="__span-0-359">
-</span><span id="__span-0-360">            <span class="c1"># Step 2: Adjust the transform matrix to maintain the position</span>
-</span><span id="__span-0-361">            <span class="c1"># under the cursor. The math is largely borrowed from</span>
-</span><span id="__span-0-362">            <span class="c1"># https://github.com/pygfx/pygfx/blob/520af2d5bb2038ec309ef645e4a60d502f00d181/pygfx/controllers/_panzoom.py#L164</span>
-</span><span id="__span-0-363">
-</span><span id="__span-0-364">            <span class="c1"># Find the distance between the world ray and the camera</span>
-</span><span id="__span-0-365">            <span class="n">zoom_center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">origin</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]</span>
-</span><span id="__span-0-366">            <span class="n">camera_center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">map</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))[:</span><span class="mi">2</span><span class="p">]</span>
-</span><span id="__span-0-367">            <span class="c1"># Compute the world distance before the zoom</span>
-</span><span id="__span-0-368">            <span class="n">delta_screen1</span> <span class="o">=</span> <span class="n">zoom_center</span> <span class="o">-</span> <span class="n">camera_center</span>
-</span><span id="__span-0-369">            <span class="c1"># Compute the world distance after the zoom</span>
-</span><span id="__span-0-370">            <span class="n">delta_screen2</span> <span class="o">=</span> <span class="n">delta_screen1</span> <span class="o">*</span> <span class="n">zoom</span>
-</span><span id="__span-0-371">            <span class="c1"># The pan is the difference between the two</span>
-</span><span id="__span-0-372">            <span class="n">pan</span> <span class="o">=</span> <span class="p">(</span><span class="n">delta_screen2</span> <span class="o">-</span> <span class="n">delta_screen1</span><span class="p">)</span> <span class="o">/</span> <span class="n">zoom</span>
-</span><span id="__span-0-373">            <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span>
-</span><span id="__span-0-374">                <span class="p">(</span>
-</span><span id="__span-0-375">                    <span class="n">pan</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock_x</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-0-376">                    <span class="n">pan</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock_y</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-0-377">                <span class="p">)</span>
-</span><span id="__span-0-378">            <span class="p">)</span>
-</span><span id="__span-0-379">            <span class="n">handled</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="__span-0-380">
-</span><span id="__span-0-381">    <span class="k">return</span> <span class="n">handled</span>
+</span><span id="__span-0-325">
+</span><span id="__span-0-326">    <span class="n">handled</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-0-327">
+</span><span id="__span-0-328">    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MouseEvent</span><span class="p">):</span>
+</span><span id="__span-0-329">        <span class="k">return</span> <span class="kc">False</span>
+</span><span id="__span-0-330">    <span class="k">if</span> <span class="p">(</span><span class="n">ray</span> <span class="o">:=</span> <span class="n">view</span><span class="o">.</span><span class="n">to_ray</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">))</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-0-331">        <span class="k">return</span> <span class="kc">False</span>
+</span><span id="__span-0-332">    <span class="c1"># Panning involves keeping a particular position underneath the cursor.</span>
+</span><span id="__span-0-333">    <span class="c1"># That position is recorded on a left mouse button press.</span>
+</span><span id="__span-0-334">    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MousePressEvent</span><span class="p">)</span> <span class="ow">and</span> <span class="n">MouseButton</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">buttons</span><span class="p">:</span>
+</span><span id="__span-0-335">        <span class="bp">self</span><span class="o">.</span><span class="n">_drag_pos</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">origin</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</span><span id="__span-0-336">    <span class="c1"># Every time the cursor is moved, until the left mouse button is released,</span>
+</span><span id="__span-0-337">    <span class="c1"># We translate the camera such that the position is back under the cursor</span>
+</span><span id="__span-0-338">    <span class="c1"># (i.e. under the world ray origin)</span>
+</span><span id="__span-0-339">    <span class="k">elif</span> <span class="p">(</span>
+</span><span id="__span-0-340">        <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">MouseMoveEvent</span><span class="p">)</span>
+</span><span id="__span-0-341">        <span class="ow">and</span> <span class="n">MouseButton</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">buttons</span>
+</span><span id="__span-0-342">        <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_drag_pos</span>
+</span><span id="__span-0-343">    <span class="p">):</span>
+</span><span id="__span-0-344">        <span class="n">new_pos</span> <span class="o">=</span> <span class="n">ray</span><span class="o">.</span><span class="n">origin</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</span><span id="__span-0-345">        <span class="n">dx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_drag_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">new_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-0-346">        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock_x</span><span class="p">:</span>
+</span><span id="__span-0-347">            <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">translated</span><span class="p">((</span><span class="n">dx</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</span><span id="__span-0-348">        <span class="n">dy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_drag_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">new_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-0-349">        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock_y</span><span class="p">:</span>
+</span><span id="__span-0-350">            <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">translated</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">dy</span><span class="p">))</span>
+</span><span id="__span-0-351">        <span class="n">handled</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-0-352">
+</span><span id="__span-0-353">    <span class="c1"># Note that while panning adjusts the camera&#39;s transform matrix, zooming</span>
+</span><span id="__span-0-354">    <span class="c1"># adjusts the projection matrix.</span>
+</span><span id="__span-0-355">    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">WheelEvent</span><span class="p">):</span>
+</span><span id="__span-0-356">        <span class="c1"># Zoom while keeping the position under the cursor fixed.</span>
+</span><span id="__span-0-357">        <span class="n">_dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">angle_delta</span>
+</span><span id="__span-0-358">        <span class="k">if</span> <span class="n">dy</span><span class="p">:</span>
+</span><span id="__span-0-359">            <span class="c1"># Step 1: Adjust the projection matrix to zoom in or out.</span>
+</span><span id="__span-0-360">            <span class="n">zoom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_zoom_factor</span><span class="p">(</span><span class="n">dy</span><span class="p">)</span>
+</span><span id="__span-0-361">            <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">projection</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">projection</span><span class="o">.</span><span class="n">scaled</span><span class="p">(</span>
+</span><span id="__span-0-362">                <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock_x</span> <span class="k">else</span> <span class="n">zoom</span><span class="p">,</span> <span class="mi">1</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock_y</span> <span class="k">else</span> <span class="n">zoom</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+</span><span id="__span-0-363">            <span class="p">)</span>
+</span><span id="__span-0-364">
+</span><span id="__span-0-365">            <span class="c1"># Step 2: Adjust the transform matrix to maintain the position</span>
+</span><span id="__span-0-366">            <span class="c1"># under the cursor. The math is largely borrowed from</span>
+</span><span id="__span-0-367">            <span class="c1"># https://github.com/pygfx/pygfx/blob/520af2d5bb2038ec309ef645e4a60d502f00d181/pygfx/controllers/_panzoom.py#L164</span>
+</span><span id="__span-0-368">
+</span><span id="__span-0-369">            <span class="c1"># Find the distance between the world ray and the camera</span>
+</span><span id="__span-0-370">            <span class="n">zoom_center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">ray</span><span class="o">.</span><span class="n">origin</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]</span>
+</span><span id="__span-0-371">            <span class="n">camera_center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">map</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))[:</span><span class="mi">2</span><span class="p">]</span>
+</span><span id="__span-0-372">            <span class="c1"># Compute the world distance before the zoom</span>
+</span><span id="__span-0-373">            <span class="n">delta_screen1</span> <span class="o">=</span> <span class="n">zoom_center</span> <span class="o">-</span> <span class="n">camera_center</span>
+</span><span id="__span-0-374">            <span class="c1"># Compute the world distance after the zoom</span>
+</span><span id="__span-0-375">            <span class="n">delta_screen2</span> <span class="o">=</span> <span class="n">delta_screen1</span> <span class="o">*</span> <span class="n">zoom</span>
+</span><span id="__span-0-376">            <span class="c1"># The pan is the difference between the two</span>
+</span><span id="__span-0-377">            <span class="n">pan</span> <span class="o">=</span> <span class="p">(</span><span class="n">delta_screen2</span> <span class="o">-</span> <span class="n">delta_screen1</span><span class="p">)</span> <span class="o">/</span> <span class="n">zoom</span>
+</span><span id="__span-0-378">            <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span>
+</span><span id="__span-0-379">                <span class="p">(</span>
+</span><span id="__span-0-380">                    <span class="n">pan</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock_x</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-0-381">                    <span class="n">pan</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lock_y</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-0-382">                <span class="p">)</span>
+</span><span id="__span-0-383">            <span class="p">)</span>
+</span><span id="__span-0-384">            <span class="n">handled</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-0-385">
+</span><span id="__span-0-386">    <span class="k">return</span> <span class="n">handled</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -13925,10 +13931,10 @@ the two entities; otherwise an exception will be raised.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["search.highlight","search.suggest","content.code.copy","content.code.annotate","navigation.indexes","navigation.footer","toc.follow"],"search":"../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"provider":"mike"}}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["search.highlight","search.suggest","content.code.copy","content.code.annotate","navigation.indexes","navigation.footer","toc.follow"],"search":"../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"provider":"mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6e5f0216.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ee611ef6.min.js"></script>
       
         <script src="../../js/install-table.js"></script>
       
